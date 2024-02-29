@@ -58,9 +58,9 @@ export default function Navbar(props) {
   return  (
   
    
-      <div className={`navContainer  bg-[#2b2b2b]  items-center h-screen  lg:block lg:static esm:text-[0.7rem]  sm:text-[1rem]
+      <div className={`navContainer  bg-[#2b2b2b]  items-center h-screen esm:text-[0.7rem]  sm:text-[1rem] fixed lg:fixed
     ${
-      isOpened ? 'absolute z-10 w-[100px] esm:w-[210px] sm:w-[300px] lg:static lg:w-[20%]' : ' bg-transparent w-[0px] lg:w-[20%]  lg:bg-[#2b2b2b] lg:block '
+      isOpened ? ' z-10 w-[100px] esm:w-[210px] sm:w-[300px] lg:static lg:w-[20%]' : ' bg-transparent w-[0px] lg:w-[20%]  lg:bg-[#2b2b2b]  '
     }`}
      >
       <div className={`text-center pr-[8px] z-50  absolute top-4 left-2 `}>
@@ -80,8 +80,9 @@ export default function Navbar(props) {
         </div>
 
      <div className={` ${
-      isOpened ? 'block' : ' hidden lg:block'
-    }`}>
+  isOpened ? 'opacity-100 visible transition-opacity duration-200 ease-in' : 'opacity-0 invisible lg:opacity-100 lg:visible transition-opacity duration-200 ease-in'
+}
+`}>
 
      
       <div className='profPicCover text-center pt-[15px] sm:mt-[10px] '> 

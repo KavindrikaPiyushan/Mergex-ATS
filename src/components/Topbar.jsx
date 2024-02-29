@@ -15,7 +15,7 @@ export default function Topbar(props) {
  
   return(
     
-      <div className='topBarCover h-[40px] flex justify-between  text-center  mt-[7px] mr-[10px] lg:mt-[10px] lg:mr-[15px] md:mt-[8px] md:mr-[12px]' >
+      <div className='topBarCover h-[40px] flex justify-between  text-center  mt-[7px] mr-[25px] lg:mt-[10px] lg:mr-[30px] md:mt-[8px] md:mr-[27px]' >
         <div className="message flex flex-row pl-[50px] lg:pl-[30px] text-[1.3rem] lg:text-[2rem]  md:text-[1.45rem] justify-center esm:text-[0.9rem] esm:items-center">
          <p className='text-white opacity-[60%] '>{props.msg}</p>
          <p className='text-white' >{props.name}</p>
