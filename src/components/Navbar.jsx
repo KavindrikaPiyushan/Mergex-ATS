@@ -9,12 +9,19 @@ import SelectionIc from '../images/icon/selection.ico';
 import ReportIc from '../images/icon/report.ico';
 import MessageIc from '../images/icon/message.ico';
 import Logout from '../images/icon/logout.ico';
+import { IoClose } from "react-icons/io5";
+import { MdOutlineMenu } from "react-icons/md"; 
+
 
 
 export default function Navbar(props) {
-   
-  const[isOpen ,setIsOpen] = useState(true);
-  const toggle = () => setIsOpen (!isOpen);
+
+  const [isOpened, setIsOpened] = useState(true);
+
+  const toggleDrawer = () => {
+    setIsOpened(!isOpened);
+  };
+  console.log("isOpened from Topbar:",isOpened);
   const menuItem=[
       {
           path:"/",
@@ -48,19 +55,47 @@ export default function Navbar(props) {
       }
   ] 
 
-  return (
-    <div className='navContainer  bg-[#2b2b2b] w-[20%] items-center h-screen'  >
-      <div className='profPicCover text-center pt-[15px]'>
-         <img src={pp} alt="" className='pp1 rounded-[50%] border-[2px] border-[solid] border-[#ffffff] w-[150px] h-[150px] m-auto' />
-         <p className='pName m-[10px] mb-[0] text-[white]'>{props.name}</p>
-         <p className='jobTitle text-[#ffffff] opacity-[30%]'>{props.post}</p>
+  return  (
+  
+   
+      <div className={`navContainer  bg-[#2b2b2b]  items-center h-screen  lg:block lg:static esm:text-[0.7rem]  sm:text-[1rem]
+    ${
+      isOpened ? 'absolute z-10 w-[100px] esm:w-[210px] sm:w-[300px] lg:static lg:w-[20%]' : ' bg-transparent w-[0px] lg:w-[20%]  lg:bg-[#2b2b2b] lg:block '
+    }`}
+     >
+      <div className={`text-center pr-[8px] z-50  absolute top-4 left-2 `}>
+          <button
+            className={`text-white  float-left border-[#EA7122] border-[2px] border-[solid] rounded-[5px]  block lg:hidden  ${
+      isOpened ? 'text-white' : ' text-[#EA7122]'
+    } `}
+            type="button"
+            aria-controls="drawer-navigation"
+            data-drawer-target="drawer-navigation"
+            data-drawer-show="drawer-navigation"
+            onClick={toggleDrawer}
+          >
+          
+            <MdOutlineMenu className={`w-[25px] h-[25px] hover:text-[#EA7122] hover:[transition:color_0.5s] hover:ease-in `} />
+          </button>
+        </div>
+
+     <div className={` ${
+      isOpened ? 'block' : ' hidden lg:block'
+    }`}>
+
+     
+      <div className='profPicCover text-center pt-[15px] sm:mt-[10px] '> 
+     
+         <img src={pp} alt="" className='pp1 rounded-[50%] border-[2px] border-[solid] border-[#ffffff] sm:w-[150px] sm:h-[150px] sm:m-auto esm:w-[100px] esm:h-[100px] esm:mt-[30px]  esm:m-auto ' />
+         <p className='pName m-[10px] mb-[0] text-[white] esm:text-[0.8rem] sm:text-[1rem] '>{props.name}</p>
+         <p className='jobTitle text-[#ffffff] opacity-[30%] esm:text-[0.8rem] sm:text-[1rem]'>{props.post}</p>
       </div>
       <div className='menuList mt-5 mb-5 '>
          {
           menuItem.map((item,index)=>(
             <NavLink to={item.path} key={index} className='link flex flex-row gap-6  pl-10 pr-10 p-[10px]  text-[#ffffff] opacity-[60%] hover:bg-[#bababa17] hover:opacity-[100%] hover:text-[#ffffff] hover:[transition:all_0.5s]'  activeclassName='active '>
               <div className='icon w-[30px] h-[30px] '>{item.icon}</div>
-              <div style={{display: isOpen ? "block" : "none"}} className="link_text text-[1rem] mt-[2px] ">{item.name}</div>
+              <div  className="link_text text-[1rem] sm:text-[1rem] esm:text-[0.7rem] mt-[2px] ">{item.name}</div>
             </NavLink>
           ))
          }
@@ -70,6 +105,8 @@ export default function Navbar(props) {
       <img src={Logout} className='logoutIc w-[30px] h-[30px] ' alt=''/>
       <button className='logOut text-white '>Log Out</button></div>
       </div>
+      </div>
     </div>
+    
   )
 }

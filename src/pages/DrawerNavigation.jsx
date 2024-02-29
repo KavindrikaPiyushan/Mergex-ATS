@@ -9,7 +9,7 @@ import SelectionIc from '../images/icon/selection.ico';
 import ReportIc from '../images/icon/report.ico';
 import MessageIc from '../images/icon/message.ico';
 import Logout from '../images/icon/logout.ico';
-
+import Navbar from '../components/Navbar';
 
 export default function DrawerNavigation() {
   const [isOpend, setIsOpend] = useState(false);
@@ -80,20 +80,18 @@ export default function DrawerNavigation() {
         id="drawer-navigation"
         className={`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform ${
           isOpen ? '' : '-translate-x-full'
-        } bg-white w-64 dark:bg-gray-800`}
+        } bg-white w-[320px] dark:bg-gray-800`}
         tabIndex="-1"
         aria-labelledby="drawer-navigation-label"
       >
-        <h5 id="drawer-navigation-label" className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-          Menu
-        </h5>
+        
         <button
           type="button"
           onClick={toggleDrawer}
           aria-controls="drawer-navigation"
           className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
         >
-          <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <svg className="w-[270px] h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
             <path
               stroke="currentColor"
               strokeLinecap="round"
@@ -102,11 +100,10 @@ export default function DrawerNavigation() {
               d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
             />
           </svg>
-          <span className="sr-only">Close menu</span>
+          
         </button>
         <div className="py-4 overflow-y-auto">
-          {/* List of menu items */}
-          {/* Replace this part with your menu items */}
+         <Navbar></Navbar>
         </div>
       </div>
     </>
