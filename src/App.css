@@ -1,10 +1,27 @@
-* {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-family: "Roboto";
- font-family: 'General Sans', sans-serif;
 
-background-color:#1a1a1a;
+
+/* Scrol bar */
+
+/* custom-scrollbar.css */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
 }
 
+::-webkit-scrollbar-track {
+  background:#2B2B2B /* Set the background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background:  #EA7122; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Set the color of the scrollbar thumb on hover */
+}
+
+/* In your component's CSS file or styled-components */
+.scrollable-content {
+  height: 300px; /* Set the height of the scrollable content */
+  overflow-y: auto; /* Enable vertical scrollbar */
+}

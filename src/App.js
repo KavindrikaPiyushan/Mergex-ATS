@@ -6,7 +6,7 @@ import InterviewFeedback from './pages/InterviewFeedback';
 import JobApproval from './pages/JobApproval';
 import Message from './pages/Message';
 import Reporting from './pages/Reporting';
-
+import './App.css';
 
 
 export default function App() {

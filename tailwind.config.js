@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['General Sans', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 
@@ -15,9 +19,11 @@ export default {
       'sm': '640px',     // Small screens
       'md': '768px',     // Medium screens
       'lg': '1300px',    // Large screens
-      'xl': '1480px',    // Extra-large screens
-      '2xl': '1536px',   // 2x extra-large screens
+      'xl': '1450px',    // Extra-large screens
+      'start1450':'1450px',
+      '2xl': '1756px',   // 2x extra-large screens
       'custom': '1450px' // Custom breakpoint named 'custom'
+      
     }
   }
 }
