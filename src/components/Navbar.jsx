@@ -55,7 +55,8 @@ export default function Navbar(props) {
       }
   ] 
 
-  return  (
+  return{
+    jsxNavbar:  (
   
    
       <div className={`navContainer  bg-[#2b2b2b]  items-center h-screen  esm:text-[0.7rem]  sm:text-[1rem] fixed lg:fixed
@@ -109,5 +110,6 @@ export default function Navbar(props) {
       </div>
     </div>
     
-  )
+  ),isOpened:isOpened
+  };
 }

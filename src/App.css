@@ -20,8 +20,32 @@
   background: #555; /* Set the color of the scrollbar thumb on hover */
 }
 
+@media (max-width: 450px) {
+  ::-webkit-scrollbar {
+    width: 4px; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 5px; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 6px; /* Adjust width for smaller screens */
+  }
+}
+@media (max-width: 1300px) {
+  ::-webkit-scrollbar {
+    width: 7px; /* Adjust width for smaller screens */
+  }
+}
 /* In your component's CSS file or styled-components */
 .scrollable-content {
-  height: 300px; /* Set the height of the scrollable content */
+  max-height: 300px; /* Set the height of the scrollable content */
   overflow-y: auto; /* Enable vertical scrollbar */
 }
+
+
