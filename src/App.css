@@ -1,5 +1,10 @@
 
-
+* {
+ 
+  text-decoration: none;
+  font-family: "Roboto";
+ font-family: 'General Sans', sans-serif;
+}
 /* Scrol bar */
 
 /* custom-scrollbar.css */

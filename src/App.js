@@ -6,6 +6,7 @@ import InterviewFeedback from './pages/InterviewFeedback';
 import JobApproval from './pages/JobApproval';
 import Message from './pages/Message';
 import Reporting from './pages/Reporting';
+import Dashboard_Recruiter from './pages/Dashboard_Recruiter.jsx'
 import './App.css';
 
 
@@ -20,6 +21,7 @@ export default function App() {
         <Route path='/job_approval' Component={JobApproval}></Route>
         <Route path='/message' Component={Message}></Route>
         <Route path='/reporting' Component={Reporting}></Route>
+        <Route path='/dashboar_Recruiter' Component={Dashboard_Recruiter}></Route>
       </Routes>
     </BrowserRouter>
  
