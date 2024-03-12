@@ -2,6 +2,7 @@ import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { useDrawingArea } from '@mui/x-charts/hooks';
 import { styled } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
 
 export default function PieCharts(props) {
     const data = [
@@ -31,7 +32,9 @@ export default function PieCharts(props) {
     function PieCenterLabel({ children }: { children: React.ReactNode }) {
         const { width, height, left, top } = useDrawingArea();
         return (
-            <StyledText x={left + width / 2} y={top + height / 2}>
+            <StyledText x={left + width / 2} y={top + height / 2} style={{fontSize:'16px'
+
+                }}>
                 {children}
             </StyledText>
         );
@@ -41,7 +44,7 @@ export default function PieCharts(props) {
         <div>
             <PieChart series={[{ data, innerRadius: 80 }]} colors={colors} {...size}>
                 {/* Conditionally render the center label only if there are exactly two data points */}
-                {data.length === 2 && <PieCenterLabel>{props.topic}</PieCenterLabel>}
+                {data.length === 2 && <PieCenterLabel style={{}}>{props.topic}</PieCenterLabel>}
             </PieChart>
             <style>
                 {`

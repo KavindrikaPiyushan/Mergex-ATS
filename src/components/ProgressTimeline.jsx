@@ -6,52 +6,60 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
-
 export default function ProgressTimeline() {
+    let a=3;
   return ( 
-    <div>
-    <Timeline position="left">
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Eat</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>Repeat</TimelineContent>
-      </TimelineItem>
-    </Timeline>
-    <style>
+    <div className='m-[100px] '>
+     
+      <Timeline position="right">
+        <TimelineItem>
+          <TimelineSeparator >
+          <TimelineDot className='' style={{ boxShadow: a === 0 || a === 1 || a === 2 || a === 3 ||a ===4 ? '0 0 0 2px #EA7122' : '0 0 0 0 #616161',borderRadius: '50%', backgroundColor: a === 0 || a === 1 || a === 2 || a === 3 ||a ===4 ? '#1a1a1a' : "#616161" }}/>
+            <TimelineConnector className='' style={{ backgroundColor: a===1 ||a===2 || a===3 || a===4? '#EA7122':'#616161'}}/>
+          </TimelineSeparator> 
+          <TimelineContent className='320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]  900px:text-[1.1rem]  1010px:text-[1.2rem] justify-around '  style={{  display:'flex '}}> Invitation Sent  <p className='text-[#ffffff] opacity-[30%]  1010px:mr-[30%] mt-[1px] items-start 320px:text-[0.4rem]  450px:text-[0.6rem] sm:text-[0.7rem]  900px:text-[0.9rem]  1010px:text-[1rem]'>2024-03-21</p></TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot className=''  style={{ boxShadow:  a === 1 || a === 2 || a === 3 || a===4? '0 0 0 2px #EA7122' : '0 0 0 0 #616161',borderRadius: '50%', backgroundColor: a === 1 || a === 2 || a === 3 ||a ===4 ? '#1a1a1a' : "#616161"}} />
+            <TimelineConnector className='' style={{ backgroundColor: a===2 || a===3 || a===4? '#EA7122':'#616161'}} />
+          </TimelineSeparator>
+          <TimelineContent className='320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]  900px:text-[1.1rem]  1010px:text-[1.2rem] justify-around' style={{  display:'flex' }}>Follow Up Sent <p className='text-[#616161] 1010px:mr-[30%] mt-[1px] items-start 320px:text-[0.4rem]  450px:text-[0.6rem] sm:text-[0.7rem]  900px:text-[0.9rem]  1010px:text-[1rem]'>2024-03-21</p></TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot className=''  style={{ boxShadow: a === 2 || a === 3 || a===4  ? '0 0 0 2px #EA7122' : '0 0 0 0 #616161',borderRadius: '50%',backgroundColor:  a === 2 || a === 3 ||a ===4 ? '#1a1a1a' : "#616161"}} />
+            <TimelineConnector className='' style={{ backgroundColor: a===3 || a===4? '#EA7122':'#616161'}} />
+          </TimelineSeparator>
+          <TimelineContent className='320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]  900px:text-[1.1rem]  1010px:text-[1.2rem] justify-around' style={{  display:'flex' }}>Interview Sheduled <p className='text-[#616161]  1010px:mr-[30%] mt-[1px] items-start 320px:text-[0.4rem]  450px:text-[0.6rem] sm:text-[0.7rem]  900px:text-[0.9rem]  1010px:text-[1rem]'>2024-03-21</p></TimelineContent>
+        </TimelineItem>
+         <TimelineItem>
+          <TimelineSeparator >
+          <TimelineDot className='' style={{ boxShadow: a === 3 ||a ===4 ? '0 0 0 2px #EA7122' : '0 0 0 0 #616161',borderRadius: '50%',backgroundColor: a === 3 ||a ===4 ? '#1a1a1a' : "#616161"}}/>
+            <TimelineConnector className=''  style={{ backgroundColor: a===4? '#EA7122':'#616161'}} />
+          </TimelineSeparator> 
+          <TimelineContent className='320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]  900px:text-[1.1rem]  1010px:text-[1.2rem] justify-around '  style={{  display:'flex '}}> Faced Interview  <p className='text-[#616161] 1010px:mr-[30%] mt-[1px] items-start 320px:text-[0.4rem]  450px:text-[0.6rem] sm:text-[0.7rem]  900px:text-[0.9rem]  1010px:text-[1rem]'>2024-03-21</p></TimelineContent>
+        </TimelineItem>
+        
+        <TimelineItem>
+          <TimelineSeparator >
+            <TimelineDot className='' style={{ boxShadow:  a===4 ? '0 0 0 2px #EA7122' : '0 0 0 0 #616161',borderRadius: '50%',backgroundColor: a ===4 ? '#1a1a1a' : "#616161"}} />
+          </TimelineSeparator>
+          <TimelineContent className='320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]  900px:text-[1.1rem]  1010px:text-[1.2rem] justify-around'  style={{  display:'flex' }}>Waiting For Comments<p className='text-[#616161] 1010px:mr-[30%] mt-[1px] items-start 320px:text-[0.4rem]  450px:text-[0.6rem] sm:text-[0.7rem]  900px:text-[0.9rem]  1010px:text-[1rem]'>2024-03-21</p></TimelineContent>
+        </TimelineItem>
+       
+      </Timeline>
+
+      <style>
                 {`
-                {/* .MuiSvgPath-root {
-                    fill: #EA7122; // Custom color for the paths
-                    stroke-width: 2px; // Set the width only for path width
+                .css-1ms7hib-MuiTimelineItem-root::before{
+                   flex:0;
                 }
-                .css-66gjpw-MuiResponsiveChart-container {
-                    width: auto;
-                } */}
+                
 
-                `}
-            </style>
+                `}   
+                </style>
+
     </div>
-
   );
 }
