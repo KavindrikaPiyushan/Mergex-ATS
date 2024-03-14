@@ -7,7 +7,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
 export default function ProgressTimeline() {
-    let a=3;
+    let a=4;
   return ( 
     <div className='m-[100px] '>
      

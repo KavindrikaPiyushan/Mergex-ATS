@@ -5,7 +5,11 @@ import { MdRemoveRedEye } from "react-icons/md";
 
 export default function PendingJobs(props) {
   return (
-    <div className='bg-[linear-gradient(180deg,_rgba(98,_92,_88,_0.136)_0%,_rgba(48,_48,_48,_0.2)_100%)] p-[10px] rounded-[25px] mb-[10px] 320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]   900px:text-[1.1rem]  1010px:text-[1.2rem] '>
+   <div>
+    
+   <div>
+   
+     <div className='bg-[linear-gradient(180deg,_rgba(98,_92,_88,_0.136)_0%,_rgba(48,_48,_48,_0.2)_100%)] p-[10px] rounded-[25px] mb-[10px] 320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]   900px:text-[1.1rem]  1010px:text-[1.2rem] '>
       <div className='JobPostCover flex flex-row flex flex-row items-center justify-around mx-[25px] my-0 px-[25px] py-0'>
         <div className='jobPost flex flex-row items-center esm:gap-0.1 500px:gap-0.5 sm:gap-0.8 md:gap-0'>
         <IoBagHandleSharp className='esm:w-[40px] esm:h-[40px] 350px:w-[50px] 350px:w-[50px] 500px:w-[60px] 500px:h-[60px] sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px] 1010px:w-[90px] 1010px:h-[90px] 1300px:w-[100px] 1300px:h-[100px] xl:w-[110px] xl:h-[110px] mr-[20px] text-[rgb(238,_231,_231)]' />
@@ -24,5 +28,49 @@ export default function PendingJobs(props) {
         </div>
       </div>
     </div>
+   
+    </div>
+    <div className='hidden p-[30px] bg-[rgba(43,43,43)] border-[1px] border-[solid] border-[#EA7122] w-[800px] rounded-[30px] mt-[20px] mb-[20px] z-50 fixed top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2'>
+            <div className='flex flex-col  '>
+    <div className='flex justify-center'>
+    <table className='border-separate [border-spacing:10px]'>
+  <tr className='[border-spacing:0_10px]'>
+    <td className='text-[rgba(255,255,255,0.75)]'>Job title</td>
+    <td className='text-[rgba(255,255,255,0.75)]'>-</td>
+    <td className='text-[rgba(255,255,255,0.75)]'>Software Engineer</td>
+  </tr>
+  <tr className='[border-spacing:0_10px]'>
+    <td className='text-[rgba(255,255,255,0.75)] '>Required experience in years</td>
+    <td className='text-[rgba(255,255,255,0.75)] '>-</td>
+    <td className='text-[rgba(255,255,255,0.75)] '>01</td>
+  </tr>
+  <tr className='[border-spacing:0_10px]'>
+    <td className='text-[rgba(255,255,255,0.75)] '>Required skills</td>
+    <td className='text-[rgba(255,255,255,0.75)] '>-</td>
+    <td className='text-[rgba(255,255,255,0.75)] '>Python</td>
+  </tr>
+  <tr className='[border-spacing:0_10px]'>
+    <td className='text-[rgba(255,255,255,0.75)] '>Vacancies</td>
+    <td className='text-[rgba(255,255,255,0.75)] '>-</td>
+    <td className='text-[rgba(255,255,255,0.75)] '>04</td>
+  </tr>
+</table>
+    </div>
+
+</div>
+
+
+              <p className='text-[rgba(255,255,255)] text-center'>A software engineer is a professional who designs, develops, and maintains software applications, systems, and programs. 
+They possess expertise in programming languages, algorithms, and problem-solving techniques to create efficient and functional software solutions. 
+Software engineers collaborate with cross-functional teams, including designers and product managers, to understand requirements and deliver high-quality software products. They are adept at debugging and troubleshooting issues, ensuring the smooth functioning of the software throughout its lifecycle. Continuous learning and staying updated with emerging technologies are integral aspects of a software engineer's role to adapt to the dynamic and evolving landscape of the tech industry.</p>
+               
+            <div className='flex flex-col gap-[15px] mt-[30px] items-center'>
+            <button type='submit' className="float-right esm:mr-[15%] sm:mr-[7%] md:mr-[6%] 900px:mr-[5%] 1010px:mr-[4%] bg-[#EA7122] esm:w-[50px] esm:h-[15px] 350px:w-[60px] 350px:h-[18px] 500px:w-[80px] 500px:h-[20px] sm:w-[100px] sm:h-[25px] md:w-[110px] md:h-[30px] 1010px:w-[120px] 1010px:h-[32px] 1300px:w-[125px] 1300px:h-[34px] xl:w-[130px] xl:h-[35px] rounded-[30px] ">Reject</button>
+            <button type='submit' className="float-right esm:mr-[15%] sm:mr-[7%] md:mr-[6%] 900px:mr-[5%] 1010px:mr-[4%] bg-[#EA7122] esm:w-[50px] esm:h-[15px] 350px:w-[60px] 350px:h-[18px] 500px:w-[80px] 500px:h-[20px] sm:w-[100px] sm:h-[25px] md:w-[110px] md:h-[30px] 1010px:w-[120px] 1010px:h-[32px] 1300px:w-[125px] 1300px:h-[34px] xl:w-[130px] xl:h-[35px] rounded-[30px] ">Accept</button>
+
+            </div>              
+            </div>
+
+   </div>
   )
 }

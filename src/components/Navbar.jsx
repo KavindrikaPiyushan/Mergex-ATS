@@ -88,7 +88,7 @@ export default function Navbar(props) {
      
       <div className='profPicCover text-center pt-[15px] sm:mt-[10px] '> 
      
-         <img src={`${pp1}`} alt="" className='pp1 rounded-[50%] border-[2px] border-[solid] border-[#ffffff] sm:w-[150px] sm:h-[150px] sm:m-auto esm:w-[100px] esm:h-[100px] esm:mt-[30px]  esm:m-auto ' />
+         <img src={pp} alt="" className='pp1 rounded-[50%] border-[2px] border-[solid] border-[#ffffff] sm:w-[150px] sm:h-[150px] sm:m-auto esm:w-[100px] esm:h-[100px] esm:mt-[30px]  esm:m-auto ' />
          <p className='pName m-[10px] mb-[0] text-[white] esm:text-[0.8rem] sm:text-[1rem] '>{props.name}</p>
          <p className='jobTitle text-[#ffffff] opacity-[30%] esm:text-[0.8rem] sm:text-[1rem]'>{props.post}</p>
       </div>

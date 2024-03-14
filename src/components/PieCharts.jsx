@@ -12,7 +12,7 @@ export default function PieCharts(props) {
     ];
       
     const size = {
-        width: 400,
+        width: 280,
         height: 200,
     };
       
@@ -32,9 +32,7 @@ export default function PieCharts(props) {
     function PieCenterLabel({ children }: { children: React.ReactNode }) {
         const { width, height, left, top } = useDrawingArea();
         return (
-            <StyledText x={left + width / 2} y={top + height / 2} style={{fontSize:'16px'
-
-                }}>
+            <StyledText x={left + width/2} y={top + height/2} style={{fontSize:'15px' }}>
                 {children}
             </StyledText>
         );
@@ -42,7 +40,7 @@ export default function PieCharts(props) {
       
     return (
         <div>
-            <PieChart series={[{ data, innerRadius: 80 }]} colors={colors} {...size}>
+            <PieChart series={[{ data, innerRadius: 75 }]} colors={colors} {...size}>
                 {/* Conditionally render the center label only if there are exactly two data points */}
                 {data.length === 2 && <PieCenterLabel style={{}}>{props.topic}</PieCenterLabel>}
             </PieChart>
