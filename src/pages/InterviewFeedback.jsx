@@ -36,7 +36,7 @@ return (
 
         </div>
         <div className='description flex flex-col w-full pt-[20px] box-border'>
-             <div className='details  border-b-[2px] '>
+             <div className='details  border-[grey]  border-b-[2px] '>
               <p className='p-[20px] pt-0 '>Rasindu Ranavaka</p>
               <p className='p-[20px] pt-0'>Software Engineer</p>
               <p className='p-[20px] pt-0'>Interviewers : W.K.Piyushan</p>

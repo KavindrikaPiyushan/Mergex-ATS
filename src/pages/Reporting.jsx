@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Topbar from '../components/Topbar.jsx';
-
+import CardEsm from '../components/CardEsm.jsx';
+import BarChart from '../components/BarCharts.jsx'
+import TimelineToHire from '../components/TimelineToHire.jsx';
+import PiechartWithIcon from '../components/PiechartWithIcon.jsx';
 
 
 export default function Dashboard() {
@@ -21,17 +24,48 @@ export default function Dashboard() {
     } `}> 
         <Topbar msg='Reporting' nameforGreeting='' name='Piyushan'  post='Hiring Manager' ></Topbar>
         <div className='content text-white flex flex-row p-[0px]  bg-[#2b2b2b] m-[30px]  h-fit rounded-[30px] 320px:text-[0.5rem]  450px:text-[0.8rem] sm:text-[0.9rem]   900px:text-[1.1rem]  1010px:text-[1.2rem]  '>
-        <div className='candidates   flex flex-col gap-[10px] bg-[#1E1E1E] rounded-[30px] esm:p-[10px] 450px:p-[15px] sm:p-[25px]  sm:w-auto 450px:w-[165px] 500px:w-[175px] lg:w-[250px] esm:w-[140px] sm:pl-[0px] sm:pr-[0px]'>
-          <p className='text-center text-[#FFFFFF] esm:p-[4px] 450px:p-[6px] sm:p-[10px] font-general-sans pt-[0px]'>Interviewed Candidates</p>
+        <div className='  flex flex-col bg-[#1E1E1E] rounded-[30px] esm:p-[10px] 450px:p-[15px] sm:p-[25px]  sm:w-auto 450px:w-[165px] 500px:w-[175px] lg:w-[250px] esm:w-[140px] sm:pl-[0px] sm:pr-[0px]'>
+        
+          <p className='text-center text-[#FFFFFF]  esm:p-[4px] 450px:p-[6px] sm:p-[10px] sm:pb-[25px] font-general-sans pt-[0px] border-b-[1px] border-[solid] border-[#6f6d6d]'> Position </p>
        
-          <div className='p-[10px] text-center border-[1px] border-[solid] border-[grey]'>Software Engineer</div>
-          <div className='p-[10px] text-center'>QA </div>
-          <div className='p-[10px] text-center'> Backend dev</div>
-        </div>
-       
-              
+          <div className='p-[10px] text-center text-[0.7rem] lg:text-[1rem]  md:text-[0.9rem] 320px:text-[0.5rem] hover:border-[1px] border-[solid] border-[grey] hover:bg-[#2b2b2b] '>Software Engineer</div>
+          <div className='p-[10px] text-center text-[0.7rem] lg:text-[1rem]  md:text-[0.9rem] 320px:text-[0.5rem] hover:border-[1px] border-[solid] border-[grey] hover:bg-[#2b2b2b]'>Quality Assurance </div>
+          <div className='p-[10px] text-center text-[0.7rem] lg:text-[1rem]  md:text-[0.9rem] 320px:text-[0.5rem]  hover:border-[1px] border-[solid] border-[grey] hover:bg-[#2b2b2b]'> Backend dev</div>
+          <div className='p-[10px] text-center text-[0.7rem] lg:text-[1rem]  md:text-[0.9rem] 320px:text-[0.5rem]  hover:border-[1px] border-[solid] border-[grey] hover:bg-[#2b2b2b]'> UI Designer</div>
+          <div className='p-[10px] text-center text-[0.7rem] lg:text-[1rem]  md:text-[0.9rem] 320px:text-[0.5rem]  hover:border-[1px] border-[solid] border-[grey] hover:bg-[#2b2b2b]'> Project Manager</div>
+         </div>
 
+        <div className='description flex flex-col w-full pt-[20px] box-border'>
+             <div className='details flex flex-row justify-around pb-[20px] '>
+             <CardEsm name="Hire" val="4 " numSize={'0.8rem'}/>
+             <CardEsm name="Applications per hire" val="2 " numSize='20px'/>
+             <CardEsm name="Days to hire" val="4 " numSize='20px'/>
+             </div>
+
+             <p className='bg-[#242424] pl-[20px] pt-[10px] pb-[10px] rounded-[20px]'>Recruitment Funnel</p>
              
+             <div>
+           <BarChart></BarChart>
+           </div>  
+           <p className='bg-[#242424] pl-[20px] pt-[10px] pb-[10px] rounded-[20px]'>Recruitment Timeline(Days to Hire)</p>
+           <p className='pl-[20px] pt-[20px] pb-[20px]'>Total days to Hire</p>
+       
+           <div className='m-auto mt-[40px] mb-[40px]'>
+             <TimelineToHire day1='7' day2='5' day3='10' day4='3' day5='8'></TimelineToHire>
+           </div>
+
+           <p className='bg-[#242424] pl-[20px] pt-[10px] pb-[10px] rounded-[20px]'>Application Rate Metrics </p>
+
+           <div className='flex flex-row'>
+           <PiechartWithIcon></PiechartWithIcon>
+           <PiechartWithIcon></PiechartWithIcon>
+           <PiechartWithIcon></PiechartWithIcon>
+           <PiechartWithIcon></PiechartWithIcon>
+           </div>
+
+            </div>   
+
+          
            
            
           
