@@ -5,6 +5,10 @@ import CardEsm from '../components/CardEsm.jsx';
 import BarChart from '../components/BarCharts.jsx'
 import TimelineToHire from '../components/TimelineToHire.jsx';
 import PiechartWithIcon from '../components/PiechartWithIcon.jsx';
+import { FaCheckCircle } from "react-icons/fa";
+import { AiTwotoneLike } from "react-icons/ai";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { PiCertificateFill } from "react-icons/pi";
 
 
 export default function Dashboard() {
@@ -35,7 +39,7 @@ export default function Dashboard() {
           <div className='p-[10px] text-center text-[0.7rem] lg:text-[1rem]  md:text-[0.9rem] 320px:text-[0.5rem]  hover:border-[1px] border-[solid] border-[grey] hover:bg-[#2b2b2b]'> Project Manager</div>
          </div>
 
-        <div className='description flex flex-col w-full pt-[20px] box-border'>
+        <div className='description flex flex-col w-full pt-[20px] box-border mb-[20px]'>
              <div className='details flex flex-row justify-around pb-[20px] '>
              <CardEsm name="Hire" val="4 " numSize={'0.8rem'}/>
              <CardEsm name="Applications per hire" val="2 " numSize='20px'/>
@@ -56,11 +60,24 @@ export default function Dashboard() {
 
            <p className='bg-[#242424] pl-[20px] pt-[10px] pb-[10px] rounded-[20px]'>Application Rate Metrics </p>
 
-           <div className='flex flex-row'>
-           <PiechartWithIcon></PiechartWithIcon>
-           <PiechartWithIcon></PiechartWithIcon>
-           <PiechartWithIcon></PiechartWithIcon>
-           <PiechartWithIcon></PiechartWithIcon>
+           <div className='flex flex-row items-center justify-around mt-[20px]'>
+           <div className='flex flex-col'>
+           <PiechartWithIcon value='70' name='Application Completion Rate ' icon={ AiTwotoneLike }></PiechartWithIcon> 
+           <p className='text-white m-auto'>Application Completion Rate </p>
+           </div> 
+           <div className='flex flex-col'> 
+           <PiechartWithIcon value='40' name='Application Completion Rate' icon= { FaCheckCircle } ></PiechartWithIcon>
+           <p className='text-white m-auto'>Qulaified Candidate Rate</p>
+           </div>
+           <div className='flex flex-col'>
+           <PiechartWithIcon value='90' name='Application Completion Rate' icon= { FaPeopleGroup } ></PiechartWithIcon>
+           <p className='text-white m-auto'>Interview to Offer Rate</p>
+           </div>
+           <div className='flex flex-col'>
+           <PiechartWithIcon value='20' name='Application Completion Rate' icon={ PiCertificateFill } ></PiechartWithIcon>
+           <p className='text-white m-auto'>Other Acceptance Rate</p>
+           </div>
+         
            </div>
 
             </div>   

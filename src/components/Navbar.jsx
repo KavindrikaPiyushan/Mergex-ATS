@@ -59,12 +59,13 @@ export default function Navbar(props) {
     jsxNavbar:  (
   
    
-      <div className={`navContainer  bg-[#2b2b2b]  items-center h-screen  esm:text-[0.7rem]  sm:text-[1rem] fixed lg:fixed
+      <div className={`navContainer  bg-[#2b2b2b]  items-center h-screen  esm:text-[0.7rem]  sm:text-[1rem]  fixed lg:fixed
     ${
       isOpened ? ' z-10 w-[100px] esm:w-[210px] sm:w-[300px] lg:static lg:w-[20%]' : ' bg-transparent w-[0px] lg:w-[20%]  lg:bg-[#2b2b2b] start1450:h-screen '
     }`}
      >
-      <div className={`text-center pr-[8px] z-50  absolute top-4 left-2 `}>
+      <div className={`text-center pr-[8px]  z-50  absolute top-4 left-2 `}>
+      
           <button
             className={`text-white  float-left border-[#EA7122] border-[2px] border-[solid] rounded-[5px]  block lg:hidden  ${
       isOpened ? 'text-white' : ' text-[#EA7122]'
@@ -88,7 +89,7 @@ export default function Navbar(props) {
      
       <div className='profPicCover text-center pt-[15px] sm:mt-[10px] '> 
      
-         <img src={pp} alt="" className='pp1 rounded-[50%] border-[2px] border-[solid] border-[#ffffff] sm:w-[150px] sm:h-[150px] sm:m-auto esm:w-[100px] esm:h-[100px] esm:mt-[30px]  esm:m-auto ' />
+         <img src={pp} alt="" className='pp1 rounded-[50%] border-[2px] border-[solid] border-[#ffffff] 2xl:w-[220px] 2xl:h-[220px] sm:w-[150px] sm:h-[150px] sm:m-auto esm:w-[100px] esm:h-[100px] esm:mt-[30px]  esm:m-auto ' />
          <p className='pName m-[10px] mb-[0] text-[white] esm:text-[0.8rem] sm:text-[1rem] '>{props.name}</p>
          <p className='jobTitle text-[#ffffff] opacity-[30%] esm:text-[0.8rem] sm:text-[1rem]'>{props.post}</p>
       </div>
@@ -97,15 +98,16 @@ export default function Navbar(props) {
           menuItem.map((item,index)=>(
             <NavLink to={item.path} key={index} className='link flex flex-row gap-6  pl-10 pr-10 p-[10px]  text-[#ffffff] opacity-[60%] hover:bg-[#bababa17] hover:opacity-[100%] hover:text-[#ffffff] hover:[transition:all_0.5s]'  activeclassName='active '>
               <div className='icon w-[30px] h-[30px] '>{item.icon}</div>
-              <div  className="link_text text-[1rem] sm:text-[1rem] esm:text-[0.7rem] mt-[2px] ">{item.name}</div>
+              <div  className="link_text text-[1rem] 2xl:text-[1.4rem] sm:text-[1rem] esm:text-[0.7rem] mt-[2px] ">{item.name}</div>
             </NavLink>
           ))
          }
       </div>
-      <div className='logOutCover items-center text-center flex '>
-      <div className='m-auto flex flex-row p-[10px] bg-[rgba(234,_113,_34,_0.53)] rounded-[15px] w-[140px] items-center justify-center gap-1.5 '>
+      <div className='logOutCover items-center text-center flex 2xl:pt-[20px] '>
+      <div className='m-auto flex flex-row p-[10px] bg-[rgba(234,_113,_34,_0.53)] rounded-[15px] w-[140px] 2xl:w-[180px] items-center justify-center gap-1.5 '>
       <img src={Logout} className='logoutIc w-[30px] h-[30px] ' alt=''/>
-      <button className='logOut text-white '>Log Out</button></div>
+      <button className='logOut text-white 2xl:text-[1.3rem] '>Log Out</button>
+      </div>
       </div>
       </div>
     </div>

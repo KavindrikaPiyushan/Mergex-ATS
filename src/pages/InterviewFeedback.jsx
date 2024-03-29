@@ -46,62 +46,99 @@ return (
                 <p className='pl-[20px] pt-[10px]'>Interview Feedback</p>
               
               <div className='flex esm:flex-col md:flex-row esm:text-center '>
-                <div className={`technical esm:p-[5px] 450px:p-[10px] sm:p-[15px] w-full m-auto hover:bg-[#1a1919]`} style={{backgroundColor:feedbackTab === 0  ? '#1a1919':'#1f1f1f'}} onClick={() => handleClick(0)}><p>Technical Details</p></div>
+                <div className={`technical esm:p-[5px] 450px:p-[10px] sm:p-[15px] w-full m-auto hover:bg-[#1a1919]`} style={{backgroundColor:feedbackTab === 0  ? '#1a1919':'#1f1f1f'}} onClick={() => handleClick(0)}><p>Technical</p></div>
                 <div className="cultural esm:p-[5px] 450px:p-[10px] sm:p-[15px] w-full m-auto hover:bg-[#1a1919]" style={{backgroundColor:feedbackTab === 1  ? '#1a1919':'#1f1f1f'}} onClick={() => handleClick(1)}><p>Culturel Fit</p></div>
                 <div className='communication esm:p-[5px] 450px:p-[10px] sm:p-[15px] w-full m-auto hover:bg-[#1a1919]' style={{backgroundColor:feedbackTab === 2  ? '#1a1919':'#1f1f1f'}} onClick={() => handleClick(2)}><p>Communication</p></div>
-                <div className="overall 450px:p-[10px] esm:p-[5px] sm:p-[15px] w-full m-auto hover:bg-[#1a1919]" style={{backgroundColor:feedbackTab === 3  ? '#1a1919':'#1f1f1f'}} onClick={() => handleClick(3)}><p>Overall Impression</p></div>
+                <div className="overall 450px:p-[10px] esm:p-[5px] sm:p-[15px] w-full m-auto hover:bg-[#1a1919]" style={{backgroundColor:feedbackTab === 3  ? '#1a1919':'#1f1f1f'}} onClick={() => handleClick(3)}><p>Overall</p></div>
 
               </div>
               
-              <div className={`flex flex-col  pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px] 2xl:pb-[25px]  ${
+              <div className={` flex flex-col pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px]  ${
       feedbackTab ===1 ? 'block' : 'hidden'
     } `}>
                  
-              <div className='flex flex-row justify-center'>
+              <div className='flex flex-col  md:flex-row justify-evenly pb-[10px]'>
+              <div className='flex flex-col m-auto mb-[20px]'>
               <PieCharts percentage='65'  topic='Communication'></PieCharts>
+              <p className='text-white m-auto'>Problem Solution</p>
+              </div>
+              <div className='flex flex-col m-auto mb-[20px]'>
               <PieCharts percentage='65'  topic='Communication'></PieCharts>
+              <p className='text-white m-auto'>Effective Collaboration</p>
+              </div>
               </div> 
 
-              <div className='flex flex-row justify-around'>
+              <div className='flex flex-col md:flex-row justify-around'>
+              <div className='flex flex-col m-auto mb-[20px]'> 
               <PieCharts percentage='75' topic='Technical details' ></PieCharts>
+              <p className='text-white m-auto'>Adoptability</p>
+            </div>
+            <div className='flex flex-col m-auto mb-[20px]'> 
               <PieCharts percentage='45' topic='Culteral Fit'></PieCharts>
+              <p className='text-white m-auto'>Decision Making</p>
+            </div>
+            <div className='flex flex-col m-auto mb-[20px]'> 
               <PieCharts percentage='65'  topic='Communication'></PieCharts>
+              <p className='text-white m-auto'>Leadership Style</p>
+            </div>
               </div>
               
              
               
               </div>
 
-              <div className={`flex flex-row justify-around  pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px] 2xl:pb-[25px]  ${
+              <div className={`flex flex-col md:flex-row justify-around  pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px] 2xl:pb-[25px]  ${
       feedbackTab ===0 ? 'block' : 'hidden'
     } `}>
-              <PieCharts percentage='45' topic='Problem Solution' ></PieCharts>
+               <div className='flex flex-col m-auto mb-[20px]'> 
+                <PieCharts percentage='45' topic='Problem Solution' ></PieCharts>
+                <p className='text-white m-auto'>Problem Solution</p>
+            </div>
+            <div className='flex flex-col m-auto mb-[20px]'> 
               <PieCharts percentage='15' topic='Language Proficiency'></PieCharts>
-             
+              <p className='text-white m-auto'>Language Proficiency</p>
+            </div> 
               
               </div>
 
-             <div className={`flex esm:flex-col md:flex-row justify-around  pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px] 2xl:pb-[25px]  ${
+             <div className={`flex flex-col  md:flex-row esm:flex-col md:flex-row justify-around  pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px] 2xl:pb-[25px]  ${
       feedbackTab ===3 ? 'block' : 'hidden'
     }`}>
-              <PieCharts percentage='75' topic='Technical details' ></PieCharts>
+            <div className='flex flex-col m-auto mb-[20px]'> 
+            <PieCharts percentage='75' topic='Technical details' ></PieCharts>
+            <p className='text-white m-auto'>Technical Details</p>
+            </div> 
+            <div className='flex flex-col m-auto mb-[20px]'>
               <PieCharts percentage='45' topic='Culteral Fit'></PieCharts>
+            <p className='text-white m-auto'>Culteral Fit </p>
+            </div>
+            <div className='flex flex-col m-auto mb-[20px]'>
               <PieCharts percentage='65'  topic='Communication'></PieCharts>
-              
+              <p className='text-white m-auto'>Communication</p>
+              </div>
               </div>
               <div className={`flex flex-col  pt-[10px] bg-[#1a1919] xl:pt-[20px] xl:pb-[20px] 2xl:pt-[25px] 2xl:pb-[25px]  ${
       feedbackTab ===2 ? 'block' : 'hidden'
     } `}>
                  
-              <div className='flex flex-row  justify-around'>
-              <PieCharts percentage='65'  topic='Communication'></PieCharts>
-              <PieCharts percentage='65'  topic='Communication'></PieCharts>
+              <div className='flex flex-col  md:flex-row justify-around'>
+              <div className='flex flex-col m-auto mb-[20px]'>
+              <PieCharts percentage='65'  topic='Clarity'></PieCharts>
+              <p className='text-white m-auto'>Clarity</p>
               </div> 
-
-              <div className='flex flex-row justify-around'>
-              <PieCharts percentage='75' topic='Technical details' ></PieCharts>
-              <PieCharts percentage='45' topic='Culteral Fit'></PieCharts>
-           
+              <div className='flex flex-col m-auto mb-[20px]'>
+              <PieCharts percentage='65'  topic='Active listening'></PieCharts>
+              <p className='text-white m-auto'>Active listening</p>
+              </div>
+             
+              <div className='flex flex-col m-auto mb-[20px]'>
+              <PieCharts percentage='75' topic='Empathy' ></PieCharts>
+              <p className='text-white m-auto'>Empathy</p>
+              </div>
+              <div className='flex flex-col m-auto mb-[20px]'>
+              <PieCharts percentage='45' topic='Presentation Skill'></PieCharts>
+              <p className='text-white m-auto'>Presenation Skill</p>
+              </div>
               </div>
               
              

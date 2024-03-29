@@ -1,61 +1,118 @@
-import * as React from 'react';
-import { PieChart } from '@mui/x-charts/PieChart';
-import { useDrawingArea } from '@mui/x-charts/hooks';
-import { styled } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import React, { useState } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
-export default function PieCharts(props) {
-    const data = [
-        { value: props.percentage },
-        { value: 100-props.percentage },
-        // Remove the other two data points
-    ];
-      
-    const size = {
-        width: 280,
-        height: 200,
-    };
-      
-    const colors = ['#EA7122', '#FFFFFF']; // Custom colors for data points
+const PieCharts = ({percentage,topic}) => {
+  const intValue = parseInt(percentage, 10);
+  const [options, setOptions] = useState({
+    chart: {
+      width: 300,
+      type: 'donut',
+    },
+    plotOptions: {
+      pie: {
+        startAngle: -90,
+        endAngle: 270,
+        donut: {
+          size: '85%',
+          labels: {
+            show: true,
+            total: {
+              show: true,
+              showAlways: true,
+              label: topic,
+              formatter: function(w) {
+                return w.globals.series[0] + '%';
+              }
+            },
+            topic: {
+               
+              fontSize: '16px',
+              offsetY: 20,
+              formatter: function(val) {
+                return val;
+              }
+            },
+            percentage: {
+              fontSize: '14px',
+              offsetY: -20,
+              formatter: function(val) {
+                return val + '%';
+              }
+            },
+          }
+        }
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    fill: {
+      type: 'solid',
+    },
+    colors: ['#EA7122', '#ffffff'],
+    legend: {
+      formatter: function(val, opts) {
+        return val + " - " + opts.w.globals.series[opts.seriesIndex]
+      }
+    },
+    title: {},
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200
+        },
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }],
+  });
 
-    const StyledText = styled('text')(({ theme }) => ({
-        fill: '#FFFFFF', // White color for the center label
-        textAnchor: 'middle',
-        dominantBaseline: 'central',
-        fontSize: 20,
-    }));
+  const [series, setSeries] = useState([intValue, 30]);
 
-    const Path = styled('path')({
-        fill: '#EA7122', // Custom color for the paths
-    });
-      
-    function PieCenterLabel({ children }: { children: React.ReactNode }) {
-        const { width, height, left, top } = useDrawingArea();
-        return (
-            <StyledText x={left + width/2} y={top + height/2} style={{fontSize:'15px' }}>
-                {children}
-            </StyledText>
-        );
-    }
-      
-    return (
-        <div>
-            <PieChart series={[{ data, innerRadius: 75 }]} colors={colors} {...size}>
-                {/* Conditionally render the center label only if there are exactly two data points */}
-                {data.length === 2 && <PieCenterLabel style={{}}>{props.topic}</PieCenterLabel>}
-            </PieChart>
-            <style>
-                {`
-                .MuiSvgPath-root {
-                    fill: #EA7122; // Custom color for the paths
-                    stroke-width: 2px; // Set the width only for path width
-                }
-                .css-66gjpw-MuiResponsiveChart-container {
-                    width: auto;
-                }
+  return (
+    <div style={{ width: '200px' }}>
+      <div id="chart">
+        <ReactApexChart options={options} series={series} type="donut" />
+      </div>
+      <div id="html-dist"></div>
 
-                `}
-            </style>
-        </div>
-    );
+      <style>
+        {`
+        .apexcharts-pie-area {
+          stroke-width: 1px;
+        }
+        .apx-legend-position-right {
+          display: none;
+        }
+        .apexcharts-tooltip-series-group{
+          color:black !important;
+        }
+        .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value, .apexcharts-datalabels, .apexcharts-pie-label{
+          color:white !important;
+          opacity:100% !important;
+        }
+        .apexcharts-datalabel-value {
+            fill: #ffffff !important;
+            opacity: 1 !important;
+        }
+        .apexcharts-datalabels-group{
+          display:block;
+          opacity:1 !important;
+        }
+        .apexcharts-datalabel-label{
+            fill:white !important;
+            display:none;
+        }
+       .apexcharts-datalabel-value{
+            fill:#EA7122 !important;
+            transform:translateY(-20px);
+        }
+        `}
+      </style>
+    </div>
+  );
 }
+
+export default PieCharts;
